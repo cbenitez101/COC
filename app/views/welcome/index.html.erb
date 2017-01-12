@@ -1,0 +1,84 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner text-center" role="listbox">
+        <div class="item active">
+            <p><%= image_tag("carousel1.jpg", class: "img-carousel") %> </p>
+            <div class="carousel-caption">
+                <h3 class="titles color-p01">Nueva hamburguesa tropical</h3>
+                <%= link_to "Quiero probarla", '',class: "btn button-p01 titles btn-sm titles text-uppercase" %>
+            </div>
+        </div>
+        <div class="item">
+            <<p><%= image_tag("carousel2.jpg", class: "img-carousel") %> </p>
+            <div class="carousel-caption">
+                <h3 class="titles color-p01">Nueva sección del café</h3>
+                <%= link_to "Quiero un café", 'restaurante.html',class: "btn button-p01 titles btn-sm titles text-uppercase" %>
+            </div>
+        </div>
+        <div class="item">
+            <p><%= image_tag("carousel3.jpg", class: "img-carousel") %> </p>
+            <div class="carousel-caption">
+                <h3 class="titles color-p01">Nuestro cono más famaso</h3>
+                <%= link_to "Quiero uno", 'restaurante.html',class: "btn button-p01 titles btn-sm titles text-uppercase" %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container text-center p-100 color-fa-p01">
+        <i class="fa fa-info fa-5x"></i>
+        <h2 class="titles">100% Canarios</h2>
+        <p>Aunque trabajamos la fusión Canaria y Americana, todos los elementos de nuestra carta están elaborados
+            con productos 100% canarios  que nos proveen nuestros agricultores y ganaderos de las islas.</p>
+        <%= link_to "Más informacion", '',class: "btn button-p01 titles btn-lg titles text-uppercase mt-25" %>
+    </div>
+</section>
+
+<section class="p-100 text-center" id="home-ofert">
+    <div class="container color-fa-p03 color-p06">
+        <i class="fa fa-heart fa-5x"></i>
+        <h2 class="titles">Crea tu propia hamburguesa</h2>
+        <p>Nosotros te damos los ingredientes y tú eliges que ponerle a tu hamburguesa</p>
+        <%= link_to "Crear ya", '',class: "btn button-p03 titles btn-lg titles text-uppercase mt-25" %>
+    </div>
+</section>
+
+<section class="p-100 text-center" id="home-order-reservation">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 color-fa-p05">
+                <i class="fa fa-motorcycle fa-5x"></i>
+                <h2 class="titles">PEDIDO</h2>
+                <p>Realiza un pedido y recíbelo en tu domicilio en menos de una hora.</p>
+                 <%= link_to "realizar pedido", 'pedido.html',class: "btn btn-lg button-p05 titles text-uppercase m-50" %>
+            </div>
+            <div class="col-xs-12 col-md-6 color-fa-p05">
+                <i class="fa fa-calendar fa-5x"></i>
+                <h2 class="titles">RESERVA</h2>
+                <p>Reserva para esta misma noche y recibirás un 10% de descuento.</p>
+                <%= link_to "realizar reserva", 'reserva.html',class: "btn btn-lg button-p05 titles text-uppercase m-50" %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-100 text-center" id="home-restaurant">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4 col-xs-12 color-fa-p03b card-restaurant">
+                <i class="fa fa-map-marker fa-5x"></i>
+                <h2 class="titles">Restaurantes</h2>
+                <p>Encuentra ya tu restaurante más cercano</p>
+                <%= link_to "Buscar", 'restaurante.html',class: "btn button-p03 titles btn-lg titles text-uppercase mt-25" %>
+            </div>
+        </div>
+    </div>
+</section>

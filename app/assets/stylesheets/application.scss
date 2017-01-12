@@ -1,0 +1,236 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+ /*
+ *= require jquery-ui
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "menu";
+@import "mixins";
+@import "font-awesome";
+
+
+$principal01    : #097ab2;
+$principal02    : #27b7ff;
+$principal03    : #ff4053;
+$principal04    : #CCC60B;
+$principal05    : #B2AD12;
+
+.button-p01 {@include button($principal01);}
+.button-p02 {@include button($principal02);}
+.button-p03 {@include button($principal03);}
+.button-p04 {@include button($principal04);}
+.button-p05 {@include button($principal05);}
+.button-p06 {@include button(#333333);}
+
+.color-p01 {@include color($principal01)}
+.color-p02 {@include color($principal02)}
+.color-p03 {@include color($principal03)}
+.color-p04 {@include color($principal04)}
+.color-p05 {@include color($principal05)}
+.color-p06 {@include color(#ffffff)}
+
+.changec-p06 {@include change-opacity(#ffffff)}
+
+.bcolor-p01 {@include bcolor($principal01)}
+.bcolor-p02 {@include bcolor($principal02)}
+.bcolor-p03 {@include bcolor($principal03)}
+.bcolor-p04 {@include bcolor($principal04)}
+.bcolor-p05 {@include bcolor($principal05)}
+.bcolor-p07 {@include bcolor(#333333)}
+.bcolor-p08 {@include bcolor(#f2f2f2)}
+
+.color-fa-p01 {@include color-fa(black, $principal01)}
+.color-fa-p02 {@include color-fa(black, $principal02)}
+.color-fa-p03 {@include color-fa(white, $principal03)}
+.color-fa-p03b {@include color-fa(black, $principal03)}
+.color-fa-p04 {@include color-fa(black, $principal04)}
+.color-fa-p05 {@include color-fa(black, $principal05)}
+
+
+body{
+  font-family: 'Raleway', sans-serif;
+  margin-top: 89px;
+}
+
+.titles {
+  font-family: 'Candal', sans-serif;
+}
+
+hr {
+  width: 600px;
+  border: solid 1.25px rgba(0,0,0,0.5);
+}
+
+#menu {
+  padding: 20px;
+}
+
+.txt-white {
+  color: #ffffff;
+  border: none;
+  &:hover,  &:focus {
+    color: #ffffff;
+    .fa {
+      color: #ffffff;
+      transform: rotate(180deg) rotate(180deg);
+      transition: ease 1s;
+    }
+  }
+}
+
+.p-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.p-25 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.p-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.p-tb-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.p-tb-25 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.p-lr-25 {
+  padding-let: 25px;
+  padding-right: 25px;
+}
+
+.m-tb-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.m-50 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#home-restaurant {
+  background: fixed url('restaurante1.jpg');
+  background-size: cover;
+}
+
+.card-restaurant {
+  background-color: white;
+  padding: 20px;
+}
+
+.card-restaurant2 {
+  background-color: white;
+  padding: 20px;
+  transition: transform ease 0.5s;
+  &:hover {
+    transform: scale(1.5,1.5);
+  }
+}
+
+.card-food {
+  padding: 10px;
+}
+
+.card-food2 {
+  background-color: white;
+  border: solid #333333 2px;
+  padding: 15px;
+  height: 250px !important;
+  transition: transform ease-in 0.3s;
+  &:hover {
+    border: solid $principal01 2px;
+    transform: scale(1.05,1.05);
+    h4{
+      color: $principal01;
+    }
+  }
+}
+
+.card-profile {
+  border: solid 2px $principal01;
+  border-radius: 5px;
+}
+
+
+.img-food {
+  width: 50%;
+}
+
+#home-ofert {
+  background-size: cover;
+  background: fixed url('oferta1.jpg');
+}
+
+#restaurante {
+  background-size: cover;
+  background: fixed url('restaurante2.jpg');
+}
+
+#franquicia {
+  background-size: cover;
+  background: fixed url('restaurante2.jpg');
+}
+
+#foot {
+  margin-bottom: 0px;
+}
+
+.img-carousel {
+  width: 100%;
+}
+
+.sinnda {
+  background-color: white;
+  border: none;
+}
+
+@media (min-width:1280px) {
+  .img-carousel {
+    width: 50%;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+}
+
+.cant{
+  width: 35px;
+}
+
+.selected{
+  border: solid #ffffff 2px;
+}
+#map{
+  height: 80%;
+  width: 100%;
+  z-index: 1;
+}

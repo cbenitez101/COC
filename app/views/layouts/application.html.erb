@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+  <head>
+    <title>COC</title>
+
+    <%= csrf_meta_tags %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Candal%7CRaleway', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+  <nav class="navbar navbar-default navbar-fixed-top" id="menu">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed txt-white" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-th"></i>
+            </button>
+            <%= link_to "COC", root_path,class: "navbar-brand" %>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li> <%= link_to ("<i class='fa fa-cutlery fa-fw'></i> carta").html_safe, menu_path, class: "text-uppercase" %> </li>
+                <li> <%= link_to ("<i class='fa fa-map-marker fa-fw'></i> restaurante").html_safe, restaurant_path, class: "text-uppercase" %> </li>
+                <li> <%= link_to ("<i class='fa fa-calendar fa-fw'></i> reserva").html_safe, reservation_index_path, class: "text-uppercase" %>  </li>
+                <li> <%= link_to ("<i class='fa fa-motorcycle fa-fw'></i> pedido").html_safe, menu_path, class: "text-uppercase" %>  </li>
+                <li> <%= link_to ("<i class='fa fa-star fa-fw'></i> franquicia").html_safe, franchise_path, class: "text-uppercase" %>  </li>
+                <% if user_signed_in? %>
+                    <li><%= link_to ("<i class='fa fa-id-card-o fa-fw'></i> perfil").html_safe, profile_path(current_user.profile.id), class: "text-uppercase" %></li>
+                    <li> <%= link_to ("<i class='fa fa-sign-out fa-fw'></i> salir").html_safe, destroy_user_session_path, :method => :delete, class: "text-uppercase" %> </li>
+                <% else %>
+                    <li> <%= link_to ("<i class='fa fa-user fa-fw'></i> entrar").html_safe, user_session_path,class: "text-uppercase" %>  </li>
+                <% end %>
+            </div>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+    <%= content_tag(:div, notice, :class => 'text-center notice alert alert-success') if notice.present? %>
+    
+    <%= content_tag(:p, alert, :class => 'alert') if alert.present? %>
+    
+    <%= yield %>
+
+    <footer id="foot" class="bcolor-p07 color-p06">
+        <div class="text-center p-tb-25">
+            <p class="p-tb-25"><em><strong>Síguenos en las redes sociales</strong></em></p>
+            <a href=""><i class="fa fa-facebook fa-4x p-lr-25 changec-p06"></i></a>
+            <a href=""><i class="fa fa-twitter fa-4x p-lr-25 changec-p06"></i></a>
+            <a href=""><i class="fa fa-instagram fa-4x p-lr-25 changec-p06"></i></a>
+            <a href=""><i class="fa fa-youtube fa-4x p-lr-25 changec-p06"></i></a>
+        </div>
+        <hr>
+        <div class="container p-tb-25">
+            <div class="row">
+                <div class="col-md-4 col-xs-12">
+                    <h3 class="titles">Mapa del sitio</h3>
+                    <p><%= link_to ("<i class='fa fa-cutlery fa-fw'></i> carta").html_safe, menu_path, class: "text-uppercase txt-white" %></p>
+                    <p><%= link_to ("<i class='fa fa-map-marker fa-fw'></i> restaurante").html_safe, restaurant_path, class: "text-uppercase txt-white" %></p>
+                    <p><%= link_to ("<i class='fa fa-calendar fa-fw'></i> reserva").html_safe, reservation_index_path, class: "text-uppercase txt-white" %></p>
+                    <p><%= link_to ("<i class='fa fa-motorcycle fa-fw'></i> pedido").html_safe, menu_path, class: "text-uppercase txt-white" %></p>
+                    <p><%= link_to ("<i class='fa fa-star fa-fw'></i> franquicia").html_safe, franchise_path, class: "text-uppercase txt-white" %></p>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <h3 class="titles">Contacto</h3>
+                    <p>Si desea contactar con nosotros, puede hacerlo mediante las siguientes vías:</p>
+                    <ul>
+                        <li>928 11 22 33</li>
+                        <li>admin@coc.com</li>
+                        <li>Calle Alberto, número 23</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <h3 class="titles">Incidencias</h3>
+                    <p>Si detecta alguna incidencia a la hora de navegar por nuestro portal,
+                    no dude en hacernos llegar un email con su sugerenica o incidencia</p>
+                </div>
+            </div>
+            <p class="p-tb-25 text-center">© Todos los derechos reservados</p>
+        </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<section class="p-tb-10">
+    <div class="container text-center">
+        <h2 class="titles text-center color-p01">Nuestra carta</h2>
+        <div class="btn btn-sm button-p01 text-uppercase tipos">Entrantes</div>
+        <div class="btn btn-sm button-p01 text-uppercase tipos">Primeros</div>
+        <div class="btn btn-sm button-p01 text-uppercase tipos">Segundos</div>
+        <div class="btn btn-sm button-p01 text-uppercase tipos">Postres</div>
+        <div class="btn btn-sm button-p01 text-uppercase tipos tiposbg">Todos</div>
+        <div class="p-tb-10">
+            <h4 class="titles text-center color-p03">Alérgenos</h4>
+            <div class="btn btn-xs button-p03 text-uppercase alerg">Gluten</div>
+            <div class="btn btn-xs button-p03 text-uppercase alerg">Carne</div>
+            <div class="btn btn-xs button-p03 text-uppercase alerg">Pescado</div>
+            <div class="btn btn-xs button-p03 text-uppercase alerg">Frutos secos</div>
+            <div class="btn btn-xs button-p03 text-uppercase alerg alergbg">Limpiar</div>
+        </div>
+    </div>
+</section>
+
+<section class="p-tb-25 bcolor-p08">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-4 pedido">
+                <h2 class="titles text-center color-p05">Tu pedido</h2>
+                <div class="row color-p04 titlepedido"><div class="col-xs-offset-1 col-xs-1"></div><div class="col-xs-4">Plato</div><div class="col-xs-5">Cantidad</div></div>
+                <div class="containerpedido"></div>
+                <h4 class="titles text-center color-p03 containerprize">Total: 0€</h4>
+                <a href="" class="btn btn-md button-p05 titles">Realizar pedido</a>
+            </div>
+            <div class="col-md-8">
+                <% cont=0 %>
+                <% @dishes.each do |c| %>
+                    <% if cont==0 %>
+                        <div class="row">
+                    <% end %>
+                    <% cont=cont+1 %>
+                     <div class="col-md-4 card-food <%= c.category %>">
+                        <div class="card-food2">
+                            <p><%=image_tag("#{c.image}", class: "img-food")%></p>
+                            <h4 class="titles"><%= c.name %></h4>
+                            <p><%= c.description %></p>
+                            <h5 class="titles prize color-p03"><%= c.price %>€</h5>
+                            <a class="btn btn-xs button-p05 anadirpedido">Añadir</a>
+                            <p>
+                                <% if current_user && @rol == 0%>
+                                    <% if c.active == 0%>
+                                        <%= check_box_tag 'active', 'yes', false %>Activo
+                                    <% else %> 
+                                        <%= check_box_tag 'active', 'yes', true %>Activo
+                                    <% end %>
+                                <% end %>
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <% if cont==3 %>
+                        </div>
+                        <% cont=0%>
+                    <% end %>
+                <% end %>
+            </div>
+            
+        </div>
+    </div>
+</section>

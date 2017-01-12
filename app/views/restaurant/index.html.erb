@@ -1,0 +1,114 @@
+<section class="p-100" id="restaurante">
+    <h2 class="titles text-center color-p01 p-25">Vamos a ayudarte a encontrar tu restaurante</h2>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                
+                <form>
+                    <div class="color-p03" id="alertaseleccionrest"></div><br/>
+                    <div class="form-group">
+                        <label for="provincia">Provincia</label>
+                        <select class="form-control" id="provincia">
+                        	<option>Selecciona una provincia</option>
+                        	<% @restaurantsprov.each do |c| %>
+                        		<%= content_tag("option", c.provincia, class: c.provincia.gsub(' ','-')) %>
+							<% end %>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="localidad">Localidad</label>
+                        <select class="form-control" id="localidad">
+                            <option>Selecciona una localidad</option>
+                        	<% @restaurantsloc.each do |c| %>
+                        		<%= content_tag("option", c.localidad, class: [c.provincia.gsub(' ','-'), c.localidad.gsub(' ','-')]) %>
+							<% end %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="restnombre">Restaurantes</label>
+                        <select class="form-control" id="restnombre">
+                            <option>Selecciona un restaurante</option>
+                        	<% @restaurantsname.each do |c| %>
+                        		<%= content_tag("option", c.name, class: [c.provincia.gsub(' ','-'), c.localidad.gsub(' ','-'), c.name.gsub(' ','-')], value: c.id) %>
+							<% end %>
+                        </select>
+                    </div>
+                    <div class="btn button-p01 btn-lg text-uppercase" id="encontrar">encontrar</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="text-center">
+    <div class="container text-center p-100">
+        <h2 class="titles color-p01">Tu restaurante</h2>
+        <p id="prest">Has seleccionado este restaurante</p>
+    </div>
+    <div id="map"></div>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBj0E4XyNuVPYsP88Cx5EtXd7pTlTnm90o">
+    </script>
+    <div id="datosrest"></div>
+</section>
+
+<section class="p-100 text-center" id="home-order-reservation">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 color-fa-p05">
+                <i class="fa fa-motorcycle fa-5x"></i>
+                <h2 class="titles">PEDIDO</h2>
+                <p>Realiza un pedido y recíbelo en tu domicilio en menos de una hora.</p>
+                <a href="carta.php" class="btn btn-lg button-p05 titles text-uppercase m-50">realizar pedido</a>
+            </div>
+            <div class="col-xs-12 col-md-6 color-fa-p05">
+                <i class="fa fa-calendar fa-5x"></i>
+                <h2 class="titles">RESERVA</h2>
+                <p>Reserva para esta misma noche y recibirás un 10% de descuento.</p>
+                <a href="reserva.html" class="btn btn-lg button-p05 titles text-uppercase m-50">realizar reserva</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="home-restaurant">
+    <div class="container text-center p-100">
+        <div class="row p-25">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Cerca</h4>
+                <p>Siempre tendrás un restaurante cerca de ti</p>
+            </div>
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Económico</h4>
+                <p>Nuestro precios son muy competitivos</p>
+            </div>
+        </div>
+        <div class="row p-25">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Calidad</h4>
+                <p>Nuestros productos son de gran calidad</p>
+            </div>
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Servicio</h4>
+                <p>Estamos siempre atentos para atenderte</p>
+            </div>
+        </div>
+        <div class="row p-25">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-1 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Comodidad</h4>
+                <p>Disfruta de nuestras sillas y sillones</p>
+            </div>
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-2 col-md-4 card-restaurant2 color-fa-p03b">
+                <i class="fa fa-2x fa-info"></i>
+                <h4 class="titles">Rapidez</h4>
+                <p>Siempre te atenderemos en muy poco tiempo</p>
+            </div>
+        </div>
+    </div>
+</section>
